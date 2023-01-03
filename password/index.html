@@ -3,44 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>パスワード生成ツール</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-  <h1>パスワード生成ツール</h1>
-  <form>
-    <div>
-      パスワードの桁数：
-      <input type="number" min="1" max="200" value="20" data-len>
-    </div>
-    <div>
-      パスワードに使う文字の種類：
-      <table>
-        <tr>
-          <td><label><input type="checkbox" checked data-type="upper">大文字</label></td>
-          <td><input type="text" size="50" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" data-type-upper></td>
-        </tr>
-        <tr>
-          <td><label><input type="checkbox" checked data-type="lower">小文字</label></td>
-          <td><input type="text" size="50" value="abcdefghijklmnopqrstuvwxyz" data-type-lower></td>
-        </tr>
-        <tr>
-          <td><label><input type="checkbox" checked data-type="number">数字</label></td>
-          <td><input type="text" size="50" value="0123456789" data-type-number></td>
-        </tr>
-        <tr>
-          <td><label><input type="checkbox" checked data-type="symbol">記号</label></td>
-          <td><input type="text" size="50" value="!#$%()=-^¥[@]:;{}_/." data-type-symbol></td>
-        </tr>
-      </table>
-    </div>
-    <div>
-      <input class="btn-generate" type="button" value="パスワードを生成する" data-generate>
-      <input class="btn-copy" type="button" value="生成したパスワードをコピーする" data-copy>
-      <input class="btn-reset" type="button" value="生成したパスワードをリセットする" data-reset>
-    </div>
-    <div id="result" data-result></div>
-    <div id="status" data-status></div>
-  </form>
+  <div class="container">
+    <h1>パスワード生成ツール</h1>
+    <form class="row">
+      <div class="col-12 mb-3">
+        <label class="form-label fs-5 fw-bold">パスワードの桁数<input class="form-control" type="number" min="1" max="200" value="20" data-len></label>
+      </div>
+      <div class="col-12 fs-5 fw-bold">
+        パスワードに使う文字の種類
+      </div>
+      <div class="col-12 mb-3">
+        <div class="form-check">
+          <label class="form-check-label"><input class="form-check-input" type="checkbox" checked data-type="upper">大文字</label>
+        </div>
+        <input class="form-control" type="text" size="50" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" data-type-upper>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="form-check">
+          <label class="form-check-label"><input class="form-check-input" type="checkbox" checked data-type="lower">小文字</label>
+        </div>
+        <input class="form-control" type="text" size="50" value="abcdefghijklmnopqrstuvwxyz" data-type-lower>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="form-check">
+          <label class="form-check-label"><input class="form-check-input" type="checkbox" checked data-type="number">数字</label>
+        </div>
+        <input class="form-control" type="text" size="50" value="0123456789" data-type-number>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="form-check">
+          <label class="form-check-label"><input class="form-check-input" type="checkbox" checked data-type="symbol">記号</label>
+        </div>
+        <input class="form-control" type="text" size="50" value="!#$%()=-^¥[@]:;{}_/." data-type-symbol>
+      </div>
+      <div class="col-12 mb-3">
+        <input class="btn btn-primary" type="button" value="パスワードを生成する" data-generate>
+        <input class="btn btn-success" type="button" value="生成したパスワードをコピーする" data-copy>
+        <input class="btn btn-danger" type="button" value="生成したパスワードをリセットする" data-reset>
+      </div>
+      <div id="result" class="col-12 fs-2 fw-bold mb-3" data-result></div>
+      <div id="status" class="col-12 fs-4 fw-bold text-danger" data-status></div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="password.js"></script>
 </body>
 </html>
