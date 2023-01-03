@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>パスワード生成ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>パスワード生成ツール</h1>
+  <form>
+    <div>
+      パスワードの桁数：
+      <input type="number" min="1" max="200" value="20" data-len>
+    </div>
+    <div>
+      パスワードに使う文字の種類：
+      <table>
+        <tr>
+          <td><label><input type="checkbox" checked data-type="upper">大文字</label></td>
+          <td><input type="text" size="50" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" data-type-upper></td>
+        </tr>
+        <tr>
+          <td><label><input type="checkbox" checked data-type="lower">小文字</label></td>
+          <td><input type="text" size="50" value="abcdefghijklmnopqrstuvwxyz" data-type-lower></td>
+        </tr>
+        <tr>
+          <td><label><input type="checkbox" checked data-type="number">数字</label></td>
+          <td><input type="text" size="50" value="0123456789" data-type-number></td>
+        </tr>
+        <tr>
+          <td><label><input type="checkbox" checked data-type="symbol">記号</label></td>
+          <td><input type="text" size="50" value="!#$%()=-^¥[@]:;{}_/." data-type-symbol></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <input class="btn-generate" type="button" value="パスワードを生成する" data-generate>
+      <input class="btn-copy" type="button" value="生成したパスワードをコピーする" data-copy>
+      <input class="btn-reset" type="button" value="生成したパスワードをリセットする" data-reset>
+    </div>
+    <div id="result" data-result></div>
+    <div id="status" data-status></div>
+  </form>
+  <script src="password.js"></script>
+</body>
+</html>

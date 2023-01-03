@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+input[type="number"] {
+  padding: .5rem;
+  margin: .2rem;
+}
+
+input[type="text"] {
+  margin: .2rem;
+  padding: .5rem;
+}
+
+input[type="button"] {
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.0rem;
+  margin: .5rem .2rem;
+  padding: .8em;
+  text-decoration: none;
+  transition: .0s;
+  width: auto;
+}
+
+input[type="button"]:active {
+  background: #696969;
+  cursor: pointer;
+  text-decoration: none;
+  transform: translate3d(0, 4px, 0);
+  transition: .0s;
+}
+
+#result {
+  border: solid 1px #333;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 1.5rem;
+  margin: .5rem 0;
+  padding: .8rem;
+  width: 80%;
+}
+
+#status {
+  color: red;
+  font-weight: bold;
+}
+
+.btn-generate {
+  background-color: #0c88ca;
+}
+
+.btn-copy {
+  background-color: #40c659;
+}
+
+.btn-reset {
+  background-color: #e85a70;
+}
