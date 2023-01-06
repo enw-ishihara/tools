@@ -37,7 +37,7 @@ const generate_pw = function() {
   // パスワードを生成する
   let pw = '';
   for (let i = 0; i < len.value; i++) {
-      pw += pw_base.charAt(Math.floor(Math.random() * pw_base.length));
+    pw += pw_base.charAt(Math.floor(Math.random() * pw_base.length));
   }
   document.querySelector('[data-result]').innerHTML = pw;
   print_status('パスワードを生成しました。');
