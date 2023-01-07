@@ -93,22 +93,13 @@ const resize_image = function(target_len_px, w0, h0) {
   });
 };
 
-const print_size = function(target, width, height) {
-  document.querySelector(target).innerHTML = '幅：' + width + '、高さ：' + height;
-};
-
 const read_image = function(canvas, reader) {
   let image = new Image();
 
   image.src = reader.result;
 
   image.onload = function() {
-    const width = image.width;
-    const height = image.height;
-    const resize = resize_image(1024, width, height);
-
-    print_size('[data-src-size]', width, height);
-    print_size('[data-dst-size]', resize.width, resize.height);
+    const resize = resize_image(1024, image.width, image.height);
 
     draw_image(canvas, image, resize.width, resize.height);
     check_qr_code(canvas);
@@ -119,13 +110,13 @@ const init = function() {
   let canvas = document.querySelector('[data-canvas]');
 
   document.querySelector('[data-input-image]').addEventListener('change', function(e) {
-    const file = e.target.files;
+    const files = e.target.files;
     let reader = new FileReader();
 
     reader.onload = function() {
       read_image(canvas, reader);
     };
-    reader.readAsDataURL(file[0]);
+    reader.readAsDataURL(files[0]);
   }, false);
 
   document.querySelector('[data-generate]').addEventListener('click', function() {
