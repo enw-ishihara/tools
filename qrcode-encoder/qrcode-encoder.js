@@ -15,18 +15,19 @@ const print_status = (function(message) {
 })();
 
 const init = function() {
-  const qrcode = new QRCode(document.querySelector('[data-qrcode]'));
-
   document.querySelector('[data-generate]').addEventListener('click', function() {
-    const text = document.querySelector('[data-text]').value;
     try {
-      qrcode.makeCode(text);
+      let qr = new QRious({
+        element: document.querySelector('[data-canvas]'),
+        value: document.querySelector('[data-text]').value
+      });
+      qr.size = 240;
       print_status('QRコードを作成しました。');
     } catch (e) {
       print_status('QRコードを作成できませんでした。');
     }
   });
-}
+};
 
 window.addEventListener('DOMContentLoaded', function() {
   init();
