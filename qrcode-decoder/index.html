@@ -8,9 +8,9 @@
 <body>
   <div class="container">
     <h1>QRコード解析ツール</h1>
+    <div class="fs-5 fw-bold mb-2">PCの場合はQRコードの画像ファイルを選択してください。スマートフォンの場合はQRコードをカメラで撮影してください。</div>
     <div class="mb-3">
-      <label class="form-label fs-5 fw-bold" id="input-image">PCの場合はQRコードの画像ファイルを選択してください。スマートフォンの場合はQRコードをカメラで撮影してください。</label>
-      <input id="input-image" class="form-control" type="file" name="file" accept="image/*" capture="camera" data-input-image>
+      <input class="form-control" type="file" name="file" accept="image/*" capture="camera" data-input-image>
     </div>
     <div class="mb-3">
       <canvas class="border" data-canvas></canvas>
